@@ -15,8 +15,6 @@ const StarRating = () => {
                 console.log(index, "index");
                 setRating(index);
               }}
-              // onMouseEnter={(e) => setHover(index)}
-              // onMouseLeave={(e) => setHover(rating)}
               onMouseEnter={() => setRating(index)}
               onMouseLeave={() => setHover(rating - 1)}
             >
