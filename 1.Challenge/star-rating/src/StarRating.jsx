@@ -9,7 +9,7 @@ const StarRating = () => {
         return (
           <>
             <button
-              key={index}
+              // key={index}
               className={index <= rating ? "on" : "off"}
               onClick={(e) => {
                 console.log(index, "index");
