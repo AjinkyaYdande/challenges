@@ -1,5 +1,5 @@
 function generateRandomNumber(){
-    let ran = Math.random();
+    let ran = Math.floor(Math.random() * 5);
     return ran;
 }
 
