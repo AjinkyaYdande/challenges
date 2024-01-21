@@ -28,24 +28,26 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 36em;
-        flex-wrap: wrap-reverse;
+        height: 37em;
+        flex-direction: column-reverse;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
           Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
           sans-serif;
+          box-sizing: border-box;
       }
       #main-div {
         width: 54%;
         background-color: #fff;
         border-radius: 1em;
         display: flex;
-        flex-wrap: wrap-reverse;
+        /* flex-direction: column-reverse; */
+        box-sizing: border-box;
         gap: 1em;
       }
       .all-sections {
         display: flex;
         /* justify-content: space-between; */
-        padding: 0.5em;
+        padding: 1em;
       }
       .form-details {
         margin: 1.6rem 1rem;
@@ -58,8 +60,9 @@
         color: #393c40;
       }
       img {
-        object-fit: contain;
+        object-fit: cover;
         height: 25em;
+        border-radius: 8px;
       }
       p {
         padding: 0.6em 0;
@@ -108,6 +111,15 @@
       button:hover {
         cursor: pointer;
       }
+
+      @media (max-width:767px){
+        .main{
+          display: flex;
+          flex-direction: column-reverse;
+        }
+      }
+
+
     </style>
   </head>
   <body>
@@ -143,7 +155,7 @@
           <button>Subscribe to monthly newsletter</button>
         </section>
         <section class="form-img">
-          <img src="/assets/images/illustration-sign-up-desktop.svg" />
+          <img src="/assets/images/illustration-sign-up-desktop.svg" width="100%"/>
         </section>
       </div>
       <!-- Sign-up form end -->
