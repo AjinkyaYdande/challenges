@@ -132,14 +132,14 @@
       button:hover {
         cursor: pointer;
         background-position: right;
-        background-image: linear-gradient(to right, #ef506c 0%, #ff624f 100%);
+        background-image: linear-gradient(to right, #ef506c 0%, #ff624f 100%  );
       }
 
       .invalid-email-label {
         color: red;
       }
 
-      .email-labels{
+      .email-labels {
         display: flex;
         justify-content: space-between;
       }
@@ -261,8 +261,14 @@
             inserInvalidEmailText[0].innerHTML = "";
           } else {
             inserInvalidEmailText[0].innerHTML = "Valid email required";
-            let stylee = document.getElementById("emailId").style.backgroundColor = "#fc7364 ";
-            console.log(stylee,"stylee");
+            let stylee = (document.getElementById(
+              "emailId"
+            ).style)
+            stylee.backgroundColor = "#ffb6a9";
+            stylee.border="2px solid coral";
+            stylee.color = "red";
+        
+            console.log(stylee, "stylee");
           }
         } else {
           inserInvalidEmailText[0].innerHTML = "Please enter email";
