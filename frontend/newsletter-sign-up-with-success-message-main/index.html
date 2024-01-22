@@ -132,7 +132,16 @@
       button:hover {
         cursor: pointer;
         background-position: right;
-        background-image: linear-gradient(to right, #EF506C 0%, #FF624F 100%);
+        background-image: linear-gradient(to right, #ef506c 0%, #ff624f 100%);
+      }
+
+      .invalid-email-label {
+        color: red;
+      }
+
+      .email-labels{
+        display: flex;
+        justify-content: space-between;
       }
 
       @media (max-width: 760px) {
@@ -176,7 +185,7 @@
         }
         button:hover {
           background-position: right;
-          background-image: linear-gradient(to right, #EF506C 0%, #FF624F 100%);
+          background-image: linear-gradient(to right, #ef506c 0%, #ff624f 100%);
         }
       }
     </style>
@@ -202,10 +211,17 @@
               <li>And much more!</li>
             </span>
           </ul>
-          <label>Email address</label>
-          <!-- <span class="invalid-email-label"><label>Valid email required</label> </span> <br /> -->
-          <input type="email" placeholder="email@company.com" /><br />
-          <button>Subscribe to monthly newsletter</button>
+          <span class="email-labels">
+            <label>Email address</label>
+            <label class="invalid-email-label"> </label>
+          </span>
+          <br />
+          <input
+            type="email"
+            id="emailId"
+            placeholder="email@company.com"
+          /><br />
+          <button onclick="subscribe()">Subscribe to monthly newsletter</button>
         </section>
         <section class="form-img">
           <img
@@ -232,5 +248,24 @@
           >. Coded by <a href="#">Your Name Here</a>.
         </div> -->
     </div>
+    <script>
+      function subscribe(e) {
+        let userEmail = document.getElementById("emailId").value;
+        let reg = /\S+@\S+\.\S+/;
+        let valid = reg.test(userEmail);
+        let inserInvalidEmailText = document.getElementsByClassName(
+          "invalid-email-label"
+        );
+        if (userEmail) {
+          if (valid) {
+            inserInvalidEmailText[0].innerHTML = "";
+          } else {
+            inserInvalidEmailText[0].innerHTML = "Valid email required";
+          }
+        } else {
+          inserInvalidEmailText[0].innerHTML = "Please enter email";
+        }
+      }
+    </script>
   </body>
 </html>
