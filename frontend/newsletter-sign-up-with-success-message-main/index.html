@@ -259,12 +259,13 @@
         if (userEmail) {
           if (valid) {
             inserInvalidEmailText[0].innerHTML = "";
+            location.assign("thanks.html")
           } else {
             inserInvalidEmailText[0].innerHTML = "Valid email required";
             let stylee = (document.getElementById(
               "emailId"
             ).style)
-            stylee.backgroundColor = "#ffb6a9";
+            stylee.backgroundColor = "rgb(255 208 218)";
             stylee.border="2px solid coral";
             stylee.color = "red";
         
