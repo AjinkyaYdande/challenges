@@ -86,6 +86,7 @@
         border: 0px;
       }
       button:hover {
+        box-shadow: 0px 5px 10px #ef506c;
         cursor: pointer;
         background-position: right;
         background-image: linear-gradient(to right, #ef506c 0%, #ff624f 100%);
@@ -99,14 +100,13 @@
         }
 
         p {
-          font-size: .8em;
+          font-size: 0.8em;
           word-wrap: break-word;
           overflow: hidden;
         }
         #main-div {
           width: 60%;
           height: 100vh;
-          
         }
         .all-sections {
           width: 100%;
@@ -116,7 +116,7 @@
           word-break: keep-all;
           box-sizing: border-box;
         }
-        
+
         body {
           height: 100vh;
           background-color: #fff;
@@ -144,12 +144,14 @@
           <b>ash@loremcompany.com.</b> Please open it and click the button
           inside to confirm your subscription.
         </p>
-        <button>Dismiss message</button>
+        <button onclick="dismiss()">Dismiss message</button>
         <!-- Success message end -->
       </div>
     </div>
     <script>
-      function dismiss(e) {}
+      function dismiss() {
+        location.assign("index.html");
+      }
     </script>
   </body>
 </html>
