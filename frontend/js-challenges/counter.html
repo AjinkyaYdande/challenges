@@ -19,7 +19,12 @@
       </header>
       <hr />
       <h2>0</h2>
-      <input type="number" placeholder="Optional" id="userEnteredValue" value=0 onchange="optionalOnChange(e)"><br><br>
+      <input
+        type="number"
+        placeholder="Optional"
+        id="userEnteredValue"
+        
+      /><br /><br />
       <button onclick="onDecrement()">-</button>
       <button onclick="onIncrement()">+</button>
       <br /><br />
@@ -28,26 +33,33 @@
 
     <script>
       const _current_value = document.getElementsByTagName("h2");
-      let enteredValue = document.getElementById("userEnteredValue").value;
-      console.log(enteredValue,"entered");
-      function onDecrement() {
-        if(enteredValue.value !== 0){
-            _current_value[0].innerHTML--
-        }else{
-            _current_value[0].innerHTML = _current_value[0].innerHTML - enteredValue;
-        }
+      let enteredValue = document.getElementById("userEnteredValue");
+      
+      let inputVal = 0;
+      enteredValue.addEventListener("change", function () {
+        inputVal = Number(enteredValue.value);
+        console.log(inputVal, "ipVal");
+      });
 
+      function onDecrement() {
+        if (inputVal === 0) {
+          _current_value[0].innerHTML--;
+        } else {
+          _current_value[0].innerHTML = _current_value[0].innerHTML - inputVal;
+        }
       }
       function onIncrement() {
-        _current_value[0].innerHTML++
+        if(inputVal === 0){
+            _current_value[0].innerHTML++;
+        }else{
+            _current_value[0].innerHTML = Number(_current_value[0].innerHTML) + inputVal;
+        }
       }
       function onReset() {
         _current_value[0].innerHTML = 0;
-        enteredValue = 0;
+        enteredValue.value = 0;
       }
-      function optionalOnChange(e){
-        
-      }
+      
     </script>
   </body>
 </html>
