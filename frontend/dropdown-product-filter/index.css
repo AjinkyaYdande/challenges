@@ -1,0 +1,32 @@
+body {
+  background-color: #8ecae6;
+}
+select{
+    width: 20vw;
+    height: 6vh;
+    border-radius: 10px;
+}
+option{
+    padding: 1em;
+}
+.main-div{
+    display: flex;
+    margin-top: 2em;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.card{
+    padding: 2em;
+    border: 2px solid #023047;
+    width: 10em;
+    background-color: #219ebc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+h5{
+    color: antiquewhite;
+    font-size: larger;
+}

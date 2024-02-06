@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>DropDown Product Filter</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <h2>DropDown Product Filter</h2>
+    <select id="product-filter" onchange="filterProducts()">
+        <option value="all">Select</option>
+        <option value="tshirts">Tshirts</option>
+        <option value="hoodies">Hoodies</options>
+        <option value="jeans">Jeans</options>    
+    </select>
+    <div class="main-div">
+        <div class="card" data-category="jeans">
+            <h5>Jeans</h5>
+        </div>
+        <div class="card" data-category="hoodies">
+            <h5>Hoodies</h5>
+        </div>
+        <div class="card" data-category="tshirts">
+            <h5>Tshirt</h5>
+        </div>
+        <div class="card" data-category="jeans">
+            <h5>Jeans</h5>
+        </div>
+        <div class="card" data-category="jeans">
+            <h5>Jeans</h5>
+        </div>
+    </div>
+    <script>
+        function filterProducts(){
+            let optionVal = document.getElementById("product-filter").value;
+            let products = document.getElementsByClassName("card");
+            console.log(products,"products");
+            for(let i=0;i<products.length;i++){
+                let cat = products[i].getAttribute("data-category");
+                if(optionVal === "all" || optionVal === cat){
+                    products[i].style.display = "block";
+                }else{
+                    products[i].style.display = "none"
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>
