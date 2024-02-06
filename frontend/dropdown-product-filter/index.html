@@ -1,48 +1,45 @@
 <!DOCTYPE html>
-<head>
-    <title>DropDown Product Filter</title>
-    <link href="index.css" rel="stylesheet">
-</head>
-<body>
-    <h2>DropDown Product Filter</h2>
-    <select id="product-filter" onchange="filterProducts()">
-        <option value="all">Select</option>
-        <option value="tshirts">Tshirts</option>
-        <option value="hoodies">Hoodies</options>
-        <option value="jeans">Jeans</options>    
-    </select>
+<html>
+  <head>
+    <title>Dropdown Product Filter</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <div class="main-div">
-        <div class="card" data-category="jeans">
-            <h5>Jeans</h5>
-        </div>
-        <div class="card" data-category="hoodies">
-            <h5>Hoodies</h5>
-        </div>
-        <div class="card" data-category="tshirts">
-            <h5>Tshirt</h5>
-        </div>
-        <div class="card" data-category="jeans">
-            <h5>Jeans</h5>
-        </div>
-        <div class="card" data-category="jeans">
-            <h5>Jeans</h5>
-        </div>
+      <h2>Dropdown Product Filter</h2>
+      <select id="product-filter" onchange="filterProducts()">
+        <option value="all">Select</option>
+        <option value="jeans">Jeans</option>
+        <option value="hoodies">Hoodies</option>
+        <option value="shirts">Shirts</option>
+        <option value="tshirts">Tshirts</option>
+      </select>
+      <div class="main-card">
+        <div class="card" data-category="jeans"><h4>Jeans</h4></div>
+        <div class="card" data-category="hoodies"><h4>Hoodies</h4></div>
+        <div class="card" data-category="shirts"><h4>Shirts</h4></div>
+        <div class="card" data-category="jeans"><h4>Jeans</h4></div>
+        <div class="card" data-category="tshirts"><h4>Tshirts</h4></div>
+        <div class="card" data-category="hoodies"><h4>Hoodies</h4></div>
+        <div class="card" data-category="tshirts"><h4>Tshirts</h4></div>
+        <div class="card" data-category="jeans"><h4>Jeans</h4></div>
+        <div class="card" data-category="shirts"><h4>Shirts</h4></div>
+        <div class="card" data-category="tshirts"><h4>Tshirts</h4></div>
+      </div>
     </div>
     <script>
-        function filterProducts(){
-            let optionVal = document.getElementById("product-filter").value;
-            let products = document.getElementsByClassName("card");
-            console.log(products,"products");
-            for(let i=0;i<products.length;i++){
-                let cat = products[i].getAttribute("data-category");
-                if(optionVal === "all" || optionVal === cat){
-                    products[i].style.display = "block";
-                }else{
-                    products[i].style.display = "none"
-                }
-            }
-            
+      function filterProducts() {
+        let selectedOption = document.getElementById("product-filter").value;
+        let products = document.getElementsByClassName("card");
+        for (let i = 0; i < products.length; i++) {
+          let category = products[i].getAttribute("data-category");
+          if (selectedOption === category || selectedOption === "all") {
+            products[i].style.display = "block";
+          } else {
+            products[i].style.display = "none";
+          }
         }
+      }
     </script>
-</body>
+  </body>
 </html>
